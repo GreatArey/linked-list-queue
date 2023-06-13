@@ -79,12 +79,22 @@ template <typename T>
 void Queue<T>::display()
 {
   Node *temp = front;
-  while (temp != nullptr)
+
+  if (temp == nullptr)
   {
-    cout << temp->data << " ";
-    temp = temp->next;
+    printf("Queue is Empty\n");
   }
-  cout << endl;
+  else
+  {
+    printf("Amount of Elements: %d\n\tQueue: ", count);
+
+    while (temp != nullptr)
+    {
+      cout << temp->data << " ";
+      temp = temp->next;
+    }
+    cout << endl;
+  }
 }
 
 template <typename T>
